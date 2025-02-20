@@ -71,10 +71,10 @@ const App = () => {
   console.log(jobs);
 
   return (
-    <div className="bg-violet-100 w-full min-h-screen pt-2">
+    <div className="bg-violet-50 w-full min-h-screen pt-2">
       <Navbar setReload = {setReload}/>
 
-      <div className="flex bg-white items-center max-sm:flex-col shadow-sm shadow-violet lg:px-16 px-5">
+      <div className="flex bg-white min-h-20 items-center max-sm:flex-col shadow-sm shadow-violet lg:px-16 px-5">
         <div className="flex lg:pr-10 relative w-full items-center border-r-2 border-neutral-100">
           <CiSearch className="absolute top-4.5 left-5 text-lg text-neutral-400" />
 
@@ -146,8 +146,8 @@ const App = () => {
             />
           </div>
         </div>
-        <div className="w-full h-14 px-4 flex flex-col gap-2 pt-2">
-          <div className="flex justify-between items-center">
+        <div className="w-full h-14 lg:pl-8 lg:pr-4 flex flex-col gap-3 pt-2">
+          <div className="flex justify-between items-center font-semibold">
             <div className="max-md:text-xs text-sm text-neutral-600">
               Salary Per Month
             </div>

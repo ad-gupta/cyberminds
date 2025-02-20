@@ -35,7 +35,7 @@ const getRelativeTime = (timestamp: string) => {
   for (const unit of units) {
     const interval = Math.floor(diffInSeconds / unit.seconds);
     if (interval >= 1) {
-      return `${interval} ${unit.name}${interval !== 1 ? "s" : ""} ago`;
+      return `${interval}${unit.name[0]} Ago`;
     }
   }
 

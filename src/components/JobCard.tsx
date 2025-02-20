@@ -21,48 +21,57 @@ const JobCard = ({
   jobType,
   maxSalary,
 }: {
-  key: number,
-  companyLogo: string,
-  datePosted: string,
-  jobTitle: string,
-  experience: string,
-  jobType: string,
-  maxSalary: string,
-  description: string
+  key: number;
+  companyLogo: string;
+  datePosted: string;
+  jobTitle: string;
+  experience: string;
+  jobType: string;
+  maxSalary: string;
+  description: string;
 }) => {
   return (
-    <div className="p-3 bg-white flex h-74 flex-col gap-4 rounded-xl" key={key}>
+    <div className="p-5 lg:px-7 bg-white flex flex-col gap-4 rounded-xl" key={key}>
       <div className="flex justify-between">
-        <div className="bg-slate-200 w-fit rounded-xl">
+        <div
+          className=" w-16 h-16 rounded-lg"
+          style={{ boxShadow: "inset 0 0 15px rgba(29, 29, 29, 0.13)" }}
+        >
           <img
             src={companyLogo}
             alt={`${jobTitle} logo`}
-            className="h-14 w-14 rounded-full"
+            className="h-16 w-16 p-0.5 rounded-full"
           />
         </div>
-        <p className="bg-blue-300 h-fit p-1.5 px-2 rounded-xl text-xs"><TimeAgo timestamp={datePosted}/> </p>
+        <p className="bg-blue-300 text-neutral-700 h-fit p-1.5 px-2 rounded-lg text-xs font-semibold">
+          <TimeAgo timestamp={datePosted} />{" "}
+        </p>
       </div>
       <p className="font-bold text-xl text-neutral-800">{jobTitle}</p>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center text-xl justify-between" style={{fontFamily: "Helvetica"}}>
         <div className="text-neutral-500 gap-1 flex items-center">
-          <RiUserAddLine />
-          <p className="text-sm font-semibold">{experience} </p>
+          <RiUserAddLine className="text-lg" />
+          <p className="text-sm ">{experience} </p>
         </div>
         <div className="text-neutral-500 gap-1 flex items-center">
-          <RiBuildingLine />
-          <p className="text-sm font-semibold">{jobType} </p>
+          <RiBuildingLine className="text-lg" />
+          <p className="text-sm">{jobType} </p>
         </div>
         <div className="text-neutral-500 gap-1 flex items-center">
-          <HiOutlineSquare3Stack3D />
-          <p className="text-sm font-semibold">{Math.round((Number(maxSalary) * 12) / 100 * 100) / 100} L </p>
+          <HiOutlineSquare3Stack3D className="text-lg" />
+          <p className="text-sm">
+            {Math.round(((Number(maxSalary) * 12) / 100) * 100) / 100}LPA
+          </p>
         </div>
       </div>
-      <ul className="list-disc pl-5 space-y-1 text-gray-700 text-xs">
+      <ul className="list-disc pl-3 space-y-1 text-neutral-700  text-sm">
         {items.map((item, index) => (
-          <li key={index}>{item}</li>
+          <li key={index}> {item}</li>
         ))}
       </ul>
-      <button className="text-white bg-sky-400 py-2 rounded-xl text-xs">Apply Now</button>
+      <button className="text-white bg-sky-500 py-2 rounded-lg text-xs">
+        Apply Now
+      </button>
     </div>
   );
 };
