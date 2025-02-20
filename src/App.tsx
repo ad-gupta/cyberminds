@@ -148,14 +148,14 @@ const App = () => {
       <Navbar setReload = {setReload}/>
 
       <div className="flex bg-white items-center max-sm:flex-col shadow-sm shadow-violet lg:px-16 px-5">
-        <div className="flex relative w-full items-center px-4 border-r-2 border-neutral-100">
+        <div className="flex relative w-full items-center border-r-2 border-neutral-100">
           <CiSearch className="absolute top-4.5 left-5 text-lg text-neutral-400" />
 
           <input
             type="text"
             id="salaryRange"
             name="minSalary"
-            className="pl-9 border-none block w-full px-3 py-4 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="pl-9 border-none block w-full px-3 py-4 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
             placeholder="Search by Job Title, Role"
@@ -173,7 +173,7 @@ const App = () => {
               name="location"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              className="mt-1 block w-full text-neutral-500 px-10 py-4 rounded-md shadow-sm focus:outline-none sm:text-sm appearance-none"
+              className="mt-1 block w-full text-neutral-500 px-10 py-4  focus:outline-none sm:text-sm appearance-none"
             >
               <option value="" disabled>
                 Preferred Location
@@ -202,7 +202,7 @@ const App = () => {
               name="jobType"
               value={jobType}
               onChange={(e) => setJobType(e.target.value)}
-              className="mt-1 block w-full text-neutral-500 px-10 py-4 rounded-md shadow-sm focus:outline-none sm:text-sm appearance-none"
+              className="mt-1 block w-full text-neutral-500 px-10 py-4  focus:outline-none sm:text-sm appearance-none"
             >
               <option value="" disabled>
                 Job Type
@@ -225,9 +225,9 @@ const App = () => {
               Salary Per Month
             </div>
             <div className="">
-              <span className="text-sm text-gray-600">₹{salaryRange.min}k</span>
+              <span className="text-sm max-md:text-xs text-gray-600">₹{salaryRange.min}k</span>
               {"-"}
-              <span className="text-sm text-gray-600">₹{salaryRange.max}k</span>
+              <span className="text-sm max-md:text-xs text-gray-600">₹{salaryRange.max}k</span>
             </div>
           </div>
           <RangeSlider
