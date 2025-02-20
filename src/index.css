@@ -1,0 +1,16 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.rounded-md{
+    border-radius: 5px;
+}
+
+.rounded-lg{
+    border-radius: 7px;
+}
+
+.rounded-sm{
+    border-radius: 3px;
+}
