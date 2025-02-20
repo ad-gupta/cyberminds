@@ -1,40 +1,45 @@
 import { useState, useEffect } from "react";
 
-const getTimeAgo = (date: Date): string => {
-  const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000);
-  const intervals: { [key: string]: number } = {
-    year: 31536000,
-    month: 2592000,
-    week: 604800,
-    day: 86400,
-    hour: 3600,
-    minute: 60,
-    second: 1,
-  };
-
-  for (let unit in intervals) {
-    const count = Math.floor(seconds / intervals[unit]);
-    if (count > 0) {
-      return `${count} ${unit}${count !== 1 ? "s" : ""} ago`;
-    }
-  }
-  return "Just now";
-};
-
-const TimeAgo = ({ timestamp }: { timestamp: string }) => {
-  const [timeAgo, setTimeAgo] = useState(getTimeAgo(new Date(timestamp)));
+const TimeAgo = ({ timestamp }) => {
+  const [timeAgo, setTimeAgo] = useState("");
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTimeAgo(getTimeAgo(new Date(timestamp)));
-    }, 60000); // Update every 60 seconds
+    const updateRelativeTime = () => {
+      setTimeAgo(getRelativeTime(timestamp));
+    };
+
+    updateRelativeTime();
+    const interval = setInterval(updateRelativeTime, 60000); // Update every minute
 
     return () => clearInterval(interval);
   }, [timestamp]);
 
-  console.log(timeAgo)
-
   return <span>{timeAgo}</span>;
+};
+
+// Function to calculate relative time
+const getRelativeTime = (timestamp) => {
+  const now = new Date();
+  const past = new Date(timestamp);
+  const diffInSeconds = Math.floor((now - past) / 1000);
+
+  const units = [
+    { name: "year", seconds: 31536000 },
+    { name: "month", seconds: 2592000 },
+    { name: "week", seconds: 604800 },
+    { name: "day", seconds: 86400 },
+    { name: "hour", seconds: 3600 },
+    { name: "minute", seconds: 60 },
+  ];
+
+  for (const unit of units) {
+    const interval = Math.floor(diffInSeconds / unit.seconds);
+    if (interval >= 1) {
+      return `${interval} ${unit.name}${interval !== 1 ? "s" : ""} ago`;
+    }
+  }
+
+  return "Just now";
 };
 
 export default TimeAgo;

@@ -2,8 +2,7 @@ import React from "react";
 import { RiUserAddLine } from "react-icons/ri";
 import { RiBuildingLine } from "react-icons/ri";
 import { HiOutlineSquare3Stack3D } from "react-icons/hi2";
-// import TimeAgo from "../utils/TimeAgo";
-import TimeAgo from "timeago-react";
+import TimeAgo from "../utils/TimeAgo";
 
 const content = `
   A user-friendly interface lets you browse stunning photos and videos.
@@ -43,7 +42,7 @@ const JobCard = ({
             className="h-14 w-14 rounded-full"
           />
         </div>
-        <p className="bg-blue-300 h-fit p-1.5 px-2 rounded-xl text-xs"><TimeAgo datetime={datePosted}/> </p>
+        <p className="bg-blue-300 h-fit p-1.5 px-2 rounded-xl text-xs"><TimeAgo timestamp={datePosted}/> </p>
       </div>
       <p className="font-bold text-xl text-neutral-800">{jobTitle}</p>
       <div className="flex items-center justify-between">
