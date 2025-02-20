@@ -10,93 +10,22 @@ import Swiggy from "./assets/swigy_logo.jpg";
 import Tesla from "./assets/tesla_logo.svg";
 import JobCard from "./components/JobCard";
 import { axiosInstance } from "./lib/axios";
+interface Job {
+  jobTitle: string;
+  jobDescription: string;
+  maxSalary: string;
+  createdAt: string; // Add this line to include createdAt
+}
+
 
 const locations = ["Bengalore", "Hyderabad", "Mumbai", "Pune", "Chennai", "Others"];
 const jobTypes = ["Internship", "Full-time", "Partime", "Contract"];
-const jobData = [
-  {
-    companyLogo: Amazon,
-    jobTitle: "Full stack developer",
-    experience: "1-3 yr Exp",
-    jobType: "Onsite",
-    maxSalary: "12LPA",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tempus ligula, at tempor neque. Nulla facilisi. Morbi vel justo at velit consectetur finibus. Donec vel enim vel justo efficitur placerat. Sed vel felis et nunc ultricies placerat eu id neque. Nulla facilisi.",
-    datePosted: "2022-01-05",
-  },
-  {
-    companyLogo: Tesla,
-    jobTitle: "Node Js Developer",
-    experience: "1-3 yr Exp",
-    jobType: "Onsite",
-    maxSalary: "12LPA",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tempus ligula, at tempor neque. Nulla facilisi. Morbi vel justo at velit consectetur finibus. Donec vel enim vel justo efficitur placerat. Sed vel felis et nunc ultricies placerat eu id neque. Nulla facilisi.",
-    datePosted: "2022-01-06",
-  },
-  {
-    companyLogo: Amazon,
-    jobTitle: "Full stack developer",
-    experience: "1-3 yr Exp",
-    jobType: "Onsite",
-    maxSalary: "12LPA",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tempus ligula, at tempor neque. Nulla facilisi. Morbi vel justo at velit consectetur finibus. Donec vel enim vel justo efficitur placerat. Sed vel felis et nunc ultricies placerat eu id neque. Nulla facilisi.",
-    datePosted: "2022-01-05",
-  },
-  {
-    companyLogo: Tesla,
-    jobTitle: "Node Js Developer",
-    experience: "1-3 yr Exp",
-    jobType: "Onsite",
-    maxSalary: "12LPA",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tempus ligula, at tempor neque. Nulla facilisi. Morbi vel justo at velit consectetur finibus. Donec vel enim vel justo efficitur placerat. Sed vel felis et nunc ultricies placerat eu id neque. Nulla facilisi.",
-    datePosted: "2022-01-06",
-  },
-
-  {
-    companyLogo: Amazon,
-    jobTitle: "Full stack developer",
-    experience: "1-3 yr Exp",
-    jobType: "Onsite",
-    maxSalary: "12LPA",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tempus ligula, at tempor neque. Nulla facilisi. Morbi vel justo at velit consectetur finibus. Donec vel enim vel justo efficitur placerat. Sed vel felis et nunc ultricies placerat eu id neque. Nulla facilisi.",
-    datePosted: "2022-01-05",
-  },
-  {
-    companyLogo: Tesla,
-    jobTitle: "Node Js Developer",
-    experience: "1-3 yr Exp",
-    jobType: "Onsite",
-    maxSalary: "12LPA",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tempus ligula, at tempor neque. Nulla facilisi. Morbi vel justo at velit consectetur finibus. Donec vel enim vel justo efficitur placerat. Sed vel felis et nunc ultricies placerat eu id neque. Nulla facilisi.",
-    datePosted: "2022-01-06",
-  },
-
-  {
-    companyLogo: Amazon,
-    jobTitle: "Full stack developer",
-    experience: "1-3 yr Exp",
-    jobType: "Onsite",
-    maxSalary: "12LPA",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tempus ligula, at tempor neque. Nulla facilisi. Morbi vel justo at velit consectetur finibus. Donec vel enim vel justo efficitur placerat. Sed vel felis et nunc ultricies placerat eu id neque. Nulla facilisi.",
-    datePosted: "2022-01-05",
-  },
-  {
-    companyLogo: Tesla,
-    jobTitle: "Node Js Developer",
-    experience: "1-3 yr Exp",
-    jobType: "Onsite",
-    maxSalary: "12LPA",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel tempus ligula, at tempor neque. Nulla facilisi. Morbi vel justo at velit consectetur finibus. Donec vel enim vel justo efficitur placerat. Sed vel felis et nunc ultricies placerat eu id neque. Nulla facilisi.",
-    datePosted: "2022-01-06",
-  },
-];
+const jobData: Job[] = [{
+  jobTitle: "Software Engineer",
+  jobDescription: "Develop and maintain software applications.",
+  maxSalary: "120",
+  createdAt: "2023-10-01T12:00:00Z", // Example date
+}]
 
 const getJobs = async (
   keyword = "",

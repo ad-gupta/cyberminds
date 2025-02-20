@@ -18,10 +18,10 @@ const TimeAgo = ({ timestamp }: {timestamp: string}) => {
 };
 
 // Function to calculate relative time
-const getRelativeTime = (timestamp) => {
-  const now = new Date();
-  const past = new Date(timestamp);
-  const diffInSeconds = Math.floor((now - past) / 1000);
+const getRelativeTime = (timestamp: string) => {
+  const now: Date = new Date();
+  const past: Date = new Date(timestamp);
+  const diffInSeconds = Math.floor((now.getTime() - past.getTime()) / 1000);
 
   const units = [
     { name: "year", seconds: 31536000 },
