@@ -2,6 +2,7 @@ import React from "react";
 import { RiUserAddLine } from "react-icons/ri";
 import { RiBuildingLine } from "react-icons/ri";
 import { HiOutlineSquare3Stack3D } from "react-icons/hi2";
+// import TimeAgo from "../utils/TimeAgo";
 import TimeAgo from "timeago-react";
 
 const content = `
@@ -33,7 +34,7 @@ const JobCard = ({
   description: String
 }) => {
   return (
-    <div className="p-3 bg-white flex flex-col gap-4 rounded-xl" key={key}>
+    <div className="p-3 bg-white flex h-74 flex-col gap-4 rounded-xl" key={key}>
       <div className="flex justify-between">
         <div className="bg-slate-200 w-fit rounded-xl">
           <img
