@@ -3,8 +3,8 @@ import { HiOutlineChevronDown } from "react-icons/hi";
 import { RiArrowDownDoubleFill } from "react-icons/ri";
 import { RiArrowUpDownFill } from "react-icons/ri";
 import { FaAnglesRight } from "react-icons/fa6";
-import { axiosInstance } from "@/lib/axios";
 import { toast } from "react-toastify";
+import { axiosInstance } from "../lib/axios";
 
 interface CreateJobProps {
   open: boolean;

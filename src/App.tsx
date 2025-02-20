@@ -147,7 +147,7 @@ const App = () => {
     <div className="bg-violet-100 w-full min-h-screen pt-2">
       <Navbar setReload = {setReload}/>
 
-      <div className="flex bg-white items-center max-sm:flex-col shadow-sm shadow-violet px-16 max-md:px-5">
+      <div className="flex bg-white items-center max-sm:flex-col shadow-sm shadow-violet lg:px-16 px-5">
         <div className="flex relative w-full items-center px-4 border-r-2 border-neutral-100">
           <CiSearch className="absolute top-4.5 left-5 text-lg text-neutral-400" />
 
@@ -237,7 +237,7 @@ const App = () => {
           />
         </div>
       </div>
-      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 max-sm:grid-cols-1 gap-4 mt-6 sm:px-20 max-sm:px-2">
+      <div className="grid lg:grid-cols-4 sm:grid-cols-2 max-sm:grid-cols-1 gap-4 mt-6 sm:px-20 max-sm:px-2">
         
         {loading ? <div className="font-bold">loading...</div>:  jobs.map((job, ind) => (
           <JobCard
