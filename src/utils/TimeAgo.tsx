@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const TimeAgo = ({ timestamp }) => {
+const TimeAgo = ({ timestamp }: {timestamp: string}) => {
   const [timeAgo, setTimeAgo] = useState("");
 
   useEffect(() => {

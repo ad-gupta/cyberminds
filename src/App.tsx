@@ -100,8 +100,8 @@ const jobData = [
 
 const getJobs = async (
   keyword = "",
-  location: String,
-  jobType: String,
+  location: string,
+  jobType: string,
   salaryRange: any
 ) => {
   try {
@@ -148,14 +148,14 @@ const App = () => {
       <Navbar setReload = {setReload}/>
 
       <div className="flex bg-white items-center max-sm:flex-col shadow-sm shadow-violet lg:px-16 px-5">
-        <div className="flex relative w-full items-center border-r-2 border-neutral-100">
+        <div className="flex lg:pr-10 relative w-full items-center border-r-2 border-neutral-100">
           <CiSearch className="absolute top-4.5 left-5 text-lg text-neutral-400" />
 
           <input
             type="text"
             id="salaryRange"
             name="minSalary"
-            className="pl-9 border-none block w-full px-3 py-4 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            className="pl-9 lg:pl-14 border-none block w-full px-3 py-4 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
             placeholder="Search by Job Title, Role"

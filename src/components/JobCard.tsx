@@ -24,13 +24,13 @@ const JobCard = ({
   description,
 }: {
   key: number,
-  companyLogo: String,
-  datePosted: String,
-  jobTitle: String,
-  experience: String,
-  jobType: String,
-  maxSalary: String,
-  description: String
+  companyLogo: string,
+  datePosted: string,
+  jobTitle: string,
+  experience: string,
+  jobType: string,
+  maxSalary: string,
+  description: string
 }) => {
   return (
     <div className="p-3 bg-white flex h-74 flex-col gap-4 rounded-xl" key={key}>
