@@ -6,9 +6,6 @@ import { FaAnglesRight } from "react-icons/fa6";
 import { toast } from "react-toastify";
 import { axiosInstance } from "../lib/axios";
 
-interface CreateJobProps {
-  open: boolean;
-}
 
 const locations = ["Bengalore", "Hyderabad", "Mumbai", "Pune", "Chennai", "Others"];
 const jobTypes = ["Internship", "Full-time", "Partime", "Contract"];
@@ -40,6 +37,7 @@ const CreateJob = ({ open, setOpen, setReload }: {open: boolean, setOpen: any, s
       
       toast.success("Job Posted Successfully")
       setOpen(false);
+      console.log(data)
     } catch (error) {
       toast.error("All fields are required");
       console.log("All fields are required")

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import companyLogo from "../assets/cybermind_works_logo.jpeg";
 import CreateJob from "./CreateJob";
 

@@ -6,8 +6,6 @@ import { PiUserSoundLight } from "react-icons/pi";
 import { HiOutlineChevronDown } from "react-icons/hi";
 import { RangeSlider } from "./lib/RangeSlider";
 import Amazon from "./assets/amazon_logo.jpg";
-import Swiggy from "./assets/swigy_logo.jpg";
-import Tesla from "./assets/tesla_logo.svg";
 import JobCard from "./components/JobCard";
 import { axiosInstance } from "./lib/axios";
 interface Job {

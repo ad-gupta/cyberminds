@@ -1,4 +1,3 @@
-import React from "react";
 import { RiUserAddLine } from "react-icons/ri";
 import { RiBuildingLine } from "react-icons/ri";
 import { HiOutlineSquare3Stack3D } from "react-icons/hi2";
@@ -21,7 +20,6 @@ const JobCard = ({
   experience,
   jobType,
   maxSalary,
-  description,
 }: {
   key: number,
   companyLogo: string,
